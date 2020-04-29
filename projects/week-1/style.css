@@ -1,77 +1,83 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap');
 
-h1, h2 {
-    font-weight: 400;
+h1,
+h2 {
+  font-weight: 400;
 }
-
 
 p {
-    margin:.5em;
+  margin: 0.5em;
 }
 
-
 body {
-    background-color: #DC092D;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+  background-color: #dc092d;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
 }
 
 #search {
-    background-color: #28AAFD;
-    color: white;
-    margin-top: 1em;
-    padding: 0.5em 1.5em; 
-    font-size: 16px;
-    border-radius: 5px;
+  background-color: #28aafd;
+  color: white;
+  margin: 2em 0;
+  padding: 0.5em 1.5em;
+  font-size: 16px;
+  border-radius: 5px;
 }
 
 #users-input {
-    height: 15px;
-    font-size: 16px;
-    padding: 5px;
-    width: 80%;
+  height: 15px;
+  font-size: 16px;
+  padding: 5px;
+  width: 40%;
 }
 
 .capitalize {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: rgb(255,224,0);
-    margin: 3em 4em;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(255, 224, 0);
+  margin: 3em 4em;
+  height: 100%;
 }
 
 .pokemon-details {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: left;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: left;
+  width: 80%;
 }
 
 .img-wrapper {
-    height: 150px;
-    width: 150px;
+  height: 150px;
+  width: 150px;
 }
 
 .pokemon-img {
-    height: 150px;
-    width: 150px;
-    margin: 0 auto;
-    text-align: center;
+  height: 150px;
+  width: 150px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .poke-card {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #FBEFD8;
-    height: 40vh;
-    width: 100%;
-    margin: 2em 0;
-    padding: 1em 1.5em;
-    border-radius: 3px;
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fbefd8;
+  border-radius: 3px;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+
+.pokemon-info {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 5em;
 }

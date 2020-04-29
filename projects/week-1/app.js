@@ -15,25 +15,35 @@ function pokemonRequest(name) {
       return response.json();
     })
     .then((data) => {
-      let abilityString = 'Abilities: ';
+      var abilityString = 'Abilities: ';
+      abilityString += "<br>"
+      var statsString = "Stats";
+      statsString += "<br><br>";
 
       document.getElementById('name').textContent = data.name;
       document.getElementById('type').textContent = data.types[0].type.name;
       document.getElementById('img').src = data.sprites.front_default;
       let abilities = data.abilities;
+      let statsObject = data.stats;
 
-
+      for (const stat of statsObject) {
+          statsString += stat.stat.name;
+          statsString += " : ";
+          statsString += stat.base_stat;
+          statsString += "<br>";
+      }
+      document.querySelector('.stats').innerHTML = statsString;
 
       for (const ability of abilities) {
-          const name = ability.ability.name;
-          const nameCapitalized = name.charAt(0).toUpperCase() + name.slice(1)
+        const name = ability.ability.name;
+        const nameCapitalized = name.charAt(0).toUpperCase() + name.slice(1);
 
         abilityString += nameCapitalized;
-        abilityString += " ";
+        abilityString += "<br>";
 
         console.log(ability.ability.name);
       }
-      document.getElementById('ability').textContent = abilityString;
+      document.getElementById('ability').innerHTML = abilityString;
 
       var audio = new Audio('pokemon-clip.mp3');
       audio.play();
