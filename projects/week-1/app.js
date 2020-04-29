@@ -10,9 +10,9 @@ searchButton.addEventListener('click', function () {
   pokemonRequest(formattedPokemonName);
 });
 
-volumeBtn.addEventListener('click', function() {
-    volumeBtn.classList.toggle("un-muted");
-    volumeBtn.classList.toggle("muted");
+volumeBtn.addEventListener('click', function () {
+  volumeBtn.classList.toggle('un-muted');
+  volumeBtn.classList.toggle('muted');
 });
 
 function pokemonRequest(name) {
@@ -21,6 +21,13 @@ function pokemonRequest(name) {
       return response.json();
     })
     .then((data) => {
+
+    
+    let pokeCards = document.querySelectorAll(".poke-card");
+    for (const cards of pokeCards) {
+        cards.classList.toggle("its-gone");
+    }
+
       var abilityString = 'Abilities: ';
       abilityString += '<br>';
       var statsString = 'Stats';
@@ -85,12 +92,10 @@ function pokemonRequest(name) {
       }
       document.getElementById('ability').innerHTML = abilityString;
 
-      if (volumeBtn.classList.contains('un-muted')){
+      if (volumeBtn.classList.contains('un-muted')) {
         var audio = new Audio('pokemon-clip.mp3');
         audio.play();
       }
-      
-      
     })
     .catch((err) => {
       //do something with error
@@ -98,4 +103,4 @@ function pokemonRequest(name) {
     });
 }
 
-
+console.log('I want to be the very best, like no one ever was!!');

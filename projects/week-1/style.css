@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap');
 
 h1,
-h2 {
+h2,
+h3 {
   font-weight: 400;
+  margin: 0.5em;
 }
 
 p {
@@ -44,7 +46,7 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: rgb(255, 224, 0);
-  margin: 3em 4em;
+  margin: 1em 2em;
   height: 100%;
 }
 
@@ -146,15 +148,15 @@ body {
     background-color: #00FF00;
 }
 
-.volume-img {
-    
+.its-gone {
+    display: none;
 }
 
 #volume-control {
     
     background-repeat: no-repeat;
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     background-color: #dc092d;
     border: none;
 }
