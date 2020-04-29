@@ -31,6 +31,10 @@ body {
   width: 40%;
 }
 
+#ability {
+    text-align: center;
+}
+
 .capitalize {
   text-transform: capitalize;
 }
@@ -81,3 +85,64 @@ body {
   grid-template-columns: auto auto;
   grid-gap: 5em;
 }
+
+.stats-bar-10 {
+    height: 15px;
+    width: 10%;
+    background-color: #FF0000;
+}
+
+.stats-bar-20 {
+    height: 15px;
+    width: 20%;
+    background-color: #FF3300;
+}
+
+.stats-bar-30 {
+    height: 15px;
+    width: 30%;
+    background-color: #ff6600;
+}
+
+.stats-bar-40 {
+    height: 15px;
+    width: 40%;
+    background-color: #ff9900;
+}
+
+.stats-bar-50 {
+    height: 15px;
+    width: 50%;
+    background-color: #FFCC00;
+}
+
+.stats-bar-60 {
+    height: 15px;
+    width: 60%;
+    background-color: #FFFF00;
+}
+
+.stats-bar-70 {
+    height: 15px;
+    width: 70%;
+    background-color: #ccff00;
+}
+
+.stats-bar-80 {
+    height: 15px;
+    width: 80%;
+    background-color: #99ff00;
+}
+
+.stats-bar-90 {
+    height: 15px;
+    width: 90%;
+    background-color: #66ff00;
+}
+
+.stats-bar-100 {
+    height: 15px;
+    width: 100%;
+    background-color: #00FF00;
+}
+

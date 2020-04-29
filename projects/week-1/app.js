@@ -16,9 +16,9 @@ function pokemonRequest(name) {
     })
     .then((data) => {
       var abilityString = 'Abilities: ';
-      abilityString += "<br>"
-      var statsString = "Stats";
-      statsString += "<br><br>";
+      abilityString += '<br>';
+      var statsString = 'Stats';
+      statsString += '<br><br>';
 
       document.getElementById('name').textContent = data.name;
       document.getElementById('type').textContent = data.types[0].type.name;
@@ -27,10 +27,46 @@ function pokemonRequest(name) {
       let statsObject = data.stats;
 
       for (const stat of statsObject) {
-          statsString += stat.stat.name;
-          statsString += " : ";
-          statsString += stat.base_stat;
-          statsString += "<br>";
+        let baseStat = stat.base_stat;
+
+        statsString += stat.stat.name;
+        statsString += ' : ';
+        statsString += baseStat;
+
+        switch (true) {
+          case baseStat <= 10:
+            statsString += '<div class="stats-bar-10"></div>';
+            break;
+          case baseStat > 11 && baseStat <= 20:
+            statsString += '<div class="stats-bar-20"></div>';
+            break;
+          case baseStat > 21 && baseStat <= 30:
+            statsString += '<div class="stats-bar-30"></div>';
+            break;
+          case baseStat > 31 && baseStat <= 40:
+            statsString += '<div class="stats-bar-40"></div>';
+            break;
+          case baseStat > 41 && baseStat <= 50:
+            statsString += '<div class="stats-bar-50"></div>';
+            break;
+          case baseStat > 51 && baseStat <= 60:
+            statsString += '<div class="stats-bar-60"></div>';
+            break;
+          case baseStat > 61 && baseStat <= 70:
+            statsString += '<div class="stats-bar-70"></div>';
+            break;
+          case baseStat > 71 && baseStat <= 80:
+            statsString += '<div class="stats-bar-80"></div>';
+            break;
+          case baseStat > 81 && baseStat <= 90:
+            statsString += '<div class="stats-bar-90"></div>';
+            break;
+          case baseStat > 91:
+            statsString += '<div class="stats-bar-100"></div>';
+            break;
+        }
+
+        statsString += '<br>';
       }
       document.querySelector('.stats').innerHTML = statsString;
 
@@ -39,7 +75,7 @@ function pokemonRequest(name) {
         const nameCapitalized = name.charAt(0).toUpperCase() + name.slice(1);
 
         abilityString += nameCapitalized;
-        abilityString += "<br>";
+        abilityString += '<br>';
 
         console.log(ability.ability.name);
       }
