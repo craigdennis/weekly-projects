@@ -2,11 +2,17 @@
 
 const searchButton = document.getElementById('search');
 const input = document.getElementById('users-input');
+const volumeBtn = document.getElementById('volume-control');
 
 searchButton.addEventListener('click', function () {
   var pokemonName = String(input.value);
   var formattedPokemonName = pokemonName.replace(' ', '-');
   pokemonRequest(formattedPokemonName);
+});
+
+volumeBtn.addEventListener('click', function() {
+    volumeBtn.classList.toggle("un-muted");
+    volumeBtn.classList.toggle("muted");
 });
 
 function pokemonRequest(name) {
@@ -76,16 +82,20 @@ function pokemonRequest(name) {
 
         abilityString += nameCapitalized;
         abilityString += '<br>';
-
-        console.log(ability.ability.name);
       }
       document.getElementById('ability').innerHTML = abilityString;
 
-      var audio = new Audio('pokemon-clip.mp3');
-      audio.play();
+      if (volumeBtn.classList.contains('un-muted')){
+        var audio = new Audio('pokemon-clip.mp3');
+        audio.play();
+      }
+      
+      
     })
     .catch((err) => {
       //do something with error
       alert('The pokemon you have entered is not recognised. Please try again');
     });
 }
+
+

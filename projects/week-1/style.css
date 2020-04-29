@@ -146,3 +146,24 @@ body {
     background-color: #00FF00;
 }
 
+.volume-img {
+    
+}
+
+#volume-control {
+    
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+    background-color: #dc092d;
+    border: none;
+}
+
+.un-muted {
+    background: url("volume.svg");
+}
+
+.muted {
+    background: url("mute.svg");
+}
+
