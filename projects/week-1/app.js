@@ -6,8 +6,8 @@ const volumeBtn = document.getElementById('volume-control');
 
 searchButton.addEventListener('click', function () {
   var pokemonName = String(input.value);
-  var formattedPokemonName = pokemonName.replace(' ', '-');
-  formattedPokemonName.toLowerCase();
+  var formattedPokemonName = pokemonName.replace(' ', '-').toLowerCase();
+  console.log(formattedPokemonName);
   pokemonRequest(formattedPokemonName);
 });
 
